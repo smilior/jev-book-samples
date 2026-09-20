@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>付録B curl の雛形 — コピー用</title><style>
+:root{--bg:#0b1020;--panel:#121933;--card:#161e36;--line:#2a3760;--text:#e8ecf7;--muted:#9db4ff;--accent:#3d6bfd;--ok:#22c55e}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:var(--muted);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:20px}
+header.site{background:var(--panel);border-bottom:1px solid var(--line);padding:22px 20px}
+header.site h1{margin:0 0 8px;font-size:1.35rem}
+header.site p{margin:0;opacity:.85}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:18px 0 8px}
+.menu a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text)}
+.menu a strong{display:block;margin-bottom:4px}
+.menu a span{display:block;font-size:.85rem;opacity:.75}
+.chapter{margin:28px 0;padding-top:8px;border-top:1px solid var(--line)}
+.chapter h2{margin:0 0 6px;font-size:1.2rem}
+.chapter .blurb{opacity:.8;margin:0 0 14px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
+.step>header{padding:14px 16px;border-bottom:1px solid var(--line);background:#182040}
+.step>header h3{margin:0 0 6px;font-size:1rem}
+.step>header p{margin:0;font-size:.9rem;opacity:.8}
+.item{padding:14px 16px;border-top:1px solid #243056}
+.item:first-of-type{border-top:0}
+.item .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.item .row h4{flex:1;margin:0;font-size:.95rem;min-width:160px}
+.item .note{font-size:.85rem;opacity:.75;margin:0 0 8px}
+button, .raw{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:.9rem;cursor:pointer}
+.raw{background:#2a3760;display:inline-block}
+pre{margin:0;padding:12px;background:#0d1328;border-radius:10px;overflow:auto;font-size:.85rem;white-space:pre-wrap}
+.toast{position:fixed;right:16px;bottom:16px;background:var(--ok);color:#052e16;padding:10px 14px;border-radius:8px;display:none;z-index:9}
+footer{opacity:.6;font-size:.85rem;padding:24px 0}
+</style></head><body>
+<header class="site"><div class="wrap">
+  <h1>付録B curl の雛形</h1>
+  <p>差し替えて使う雛形。</p>
+  <p><a href="index.html">← 章メニューに戻る</a></p>
+  <div class="menu"><a href="ch04.html"><strong>Chapter4</strong><span>Chapter4 Playground で最初の判定</span></a><a href="ch05.html"><strong>Chapter5</strong><span>Chapter5 curl で呼ぶ</span></a><a href="ch07.html"><strong>Chapter7</strong><span>Chapter7 少し質問を足す</span></a><a href="ch08.html"><strong>Chapter8</strong><span>Chapter8 自動してよいか</span></a><a href="apb.html"><strong>付録B</strong><span>付録B curl の雛形</span></a></div>
+</div></header>
+<main class="wrap">
+<section class="step">
+  <header><h3>コピー用雛形</h3><p>本文の #apb-01 〜 に対応。</p></header>
+  <div class="item" id="apb-01">
+  <div class="row">
+    <h4>サンプル 01</h4>
+    <button type="button" data-copy="apb-01">コピー</button>
+    <a class="raw" href="samples/appendix-b/01.sh">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-01">export $(grep -v &#x27;^#&#x27; .env | xargs)
+echo &quot;${JEV_API_KEY:0:6}...&quot;
+</code></pre>
+</div>
+<div class="item" id="apb-02">
+  <div class="row">
+    <h4>サンプル 02</h4>
+    <button type="button" data-copy="apb-02">コピー</button>
+    <a class="raw" href="samples/appendix-b/02.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-02">{
+  &quot;state&quot;: &quot;ここに材料&quot;,
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;自分で付ける名前&quot;: {
+      &quot;type&quot;: &quot;choice | score | noul&quot;,
+      &quot;instructions&quot;: &quot;聞きたいこと&quot;,
+      &quot;criteria&quot;: &quot;型による。noul では省略可&quot;
+    }
+  }
+}
+</code></pre>
+</div>
+<div class="item" id="apb-03">
+  <div class="row">
+    <h4>サンプル 03</h4>
+    <button type="button" data-copy="apb-03">コピー</button>
+    <a class="raw" href="samples/appendix-b/03.sh">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-03">curl -X POST https://api.typesafe.ai/v1/systemone \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d @request.json
+</code></pre>
+</div>
+<div class="item" id="apb-04">
+  <div class="row">
+    <h4>サンプル 04</h4>
+    <button type="button" data-copy="apb-04">コピー</button>
+    <a class="raw" href="samples/appendix-b/04.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-04">&quot;doc_type&quot;: {
+  &quot;type&quot;: &quot;choice&quot;,
+  &quot;instructions&quot;: &quot;この文書の種類はどれか&quot;,
+  &quot;criteria&quot;: {
+    &quot;minutes&quot;: &quot;会議で決まったことの記録&quot;,
+    &quot;notice&quot;: &quot;周知・共有。作業や返信を求めない&quot;,
+    &quot;application&quot;: &quot;承認や申請を求める文書&quot;,
+    &quot;other&quot;: &quot;どれにも当てはまらない&quot;
+  }
+}
+</code></pre>
+</div>
+<div class="item" id="apb-05">
+  <div class="row">
+    <h4>サンプル 05</h4>
+    <button type="button" data-copy="apb-05">コピー</button>
+    <a class="raw" href="samples/appendix-b/05.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-05">&quot;tone&quot;: {
+  &quot;type&quot;: &quot;score&quot;,
+  &quot;instructions&quot;: &quot;この下書きを、社内に送る前の丁寧さはどの段階か&quot;,
+  &quot;criteria&quot;: [
+    &quot;そのまま送ってよい&quot;,
+    &quot;表現を直してから送る&quot;,
+    &quot;人が内容を見てから送る&quot;
+  ]
+}
+</code></pre>
+</div>
+<div class="item" id="apb-06">
+  <div class="row">
+    <h4>サンプル 06</h4>
+    <button type="button" data-copy="apb-06">コピー</button>
+    <a class="raw" href="samples/appendix-b/06.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-06">&quot;has_deadline&quot;: {
+  &quot;type&quot;: &quot;noul&quot;,
+  &quot;instructions&quot;: &quot;この文書に、いつまでに、という期限が書いてあるか&quot;
+}
+</code></pre>
+</div>
+<div class="item" id="apb-07">
+  <div class="row">
+    <h4>サンプル 07</h4>
+    <button type="button" data-copy="apb-07">コピー</button>
+    <a class="raw" href="samples/appendix-b/07.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-07">{
+  &quot;state&quot;: {
+    &quot;source&quot;: &quot;残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。&quot;,
+    &quot;claim&quot;: &quot;当社では残業の申請は不要です。&quot;
+  },
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;relation&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;instructions&quot;: &quot;`source` は `claim` を支えているか、反しているか、触れていないか&quot;,
+      &quot;criteria&quot;: {
+        &quot;supports&quot;: &quot;節は、その主張が正しいと言っている、または直接そう読める&quot;,
+        &quot;contradicts&quot;: &quot;節は、その主張の反対を言っている&quot;,
+        &quot;says_nothing&quot;: &quot;節は、その主張について何も言っていない&quot;
+      }
+    }
+  }
+}
+</code></pre>
+</div>
+<div class="item" id="apb-08">
+  <div class="row">
+    <h4>サンプル 08</h4>
+    <button type="button" data-copy="apb-08">コピー</button>
+    <a class="raw" href="samples/appendix-b/08.sh">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-08">curl https://api.typesafe.ai/v1/models \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot;
+</code></pre>
+</div>
+<div class="item" id="apb-09">
+  <div class="row">
+    <h4>サンプル 09</h4>
+    <button type="button" data-copy="apb-09">コピー</button>
+    <a class="raw" href="samples/appendix-b/09.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-09">{
+  &quot;state&quot;: &quot;3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。&quot;,
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;department&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;instructions&quot;: &quot;どのチームが対応すべきか&quot;,
+      &quot;criteria&quot;: {
+        &quot;billing&quot;: &quot;支払い・請求・サブスクリプションの問題&quot;,
+        &quot;technical&quot;: &quot;不具合・障害・連携の問題&quot;,
+        &quot;sales&quot;: &quot;料金・アップグレード・新規アカウントの質問&quot;
+      }
+    },
+    &quot;frustration&quot;: {
+      &quot;type&quot;: &quot;score&quot;,
+      &quot;instructions&quot;: &quot;顧客がどれくらい不満そうか&quot;,
+      &quot;criteria&quot;: [
+        &quot;冷静に事実だけ述べている&quot;,
+        &quot;不満はあるが礼儀正しい&quot;,
+        &quot;激怒して強い言葉を使っている&quot;
+      ]
+    },
+    &quot;is_urgent&quot;: {
+      &quot;type&quot;: &quot;noul&quot;,
+      &quot;instructions&quot;: &quot;このメッセージは緊急性や時間的な切迫を伝えているか&quot;
+    }
+  }
+}
+</code></pre>
+</div>
+<div class="item" id="apb-10">
+  <div class="row">
+    <h4>サンプル 10</h4>
+    <button type="button" data-copy="apb-10">コピー</button>
+    <a class="raw" href="samples/appendix-b/10.json">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-10">{
+  &quot;model&quot;: &quot;jev-1.13.0&quot;,
+  &quot;answers&quot;: {
+    &quot;department&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;choice&quot;: &quot;technical&quot;,
+      &quot;confidence&quot;: 0.77,
+      &quot;probabilities&quot;: { &quot;technical&quot;: 0.85, &quot;billing&quot;: 0.15, &quot;sales&quot;: 0.0 }
+    },
+    &quot;frustration&quot;: {
+      &quot;type&quot;: &quot;score&quot;,
+      &quot;score&quot;: 1.0,
+      &quot;confidence&quot;: 0.87,
+      &quot;legend&quot;: {
+        &quot;0&quot;: &quot;冷静に事実だけ述べている&quot;,
+        &quot;1&quot;: &quot;不満はあるが礼儀正しい&quot;,
+        &quot;2&quot;: &quot;激怒して強い言葉を使っている&quot;
+      },
+      &quot;probabilities&quot;: { &quot;0&quot;: 0.04, &quot;1&quot;: 0.92, &quot;2&quot;: 0.04 }
+    },
+    &quot;is_urgent&quot;: { &quot;type&quot;: &quot;noul&quot;, &quot;noul&quot;: 0.98 }
+  },
+  &quot;usage&quot;: { &quot;input_tokens&quot;: 528, &quot;output_tokens&quot;: 73 }
+}
+</code></pre>
+</div>
+<div class="item" id="apb-11">
+  <div class="row">
+    <h4>サンプル 11</h4>
+    <button type="button" data-copy="apb-11">コピー</button>
+    <a class="raw" href="samples/appendix-b/11.sh">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-11">curl -s -X POST https://api.typesafe.ai/v1/systemone \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d @request.json | jq &#x27;.answers&#x27;
+</code></pre>
+</div>
+<div class="item" id="apb-12">
+  <div class="row">
+    <h4>サンプル 12</h4>
+    <button type="button" data-copy="apb-12">コピー</button>
+    <a class="raw" href="samples/appendix-b/12.sh">生ファイル</a>
+  </div>
+  
+  <pre><code id="code-apb-12">... | jq &#x27;.answers | to_entries | map({(.key): (.value.confidence // .value.noul)}) | add&#x27;
+</code></pre>
+</div>
+</section>
+<footer>キーの実値は載せません。自分の環境の値に差し替えてください。</footer>
+</main>
+<div class="toast" id="toast">コピーしました</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const id=btn.getAttribute('data-copy');
+    const el=document.getElementById('code-'+id);
+    await navigator.clipboard.writeText(el.innerText);
+    const t=document.getElementById('toast');
+    t.style.display='block'; setTimeout(()=>t.style.display='none',1200);
+  });
+});
+// deep link: if hash present, scroll
+if(location.hash){
+  const t=document.querySelector(location.hash);
+  if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body></html>

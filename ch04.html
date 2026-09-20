@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chapter4 Playground で最初の判定 — コピー用</title><style>
+:root{--bg:#0b1020;--panel:#121933;--card:#161e36;--line:#2a3760;--text:#e8ecf7;--muted:#9db4ff;--accent:#3d6bfd;--ok:#22c55e}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:var(--muted);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:980px;margin:0 auto;padding:20px}
+header.site{background:var(--panel);border-bottom:1px solid var(--line);padding:22px 20px}
+header.site h1{margin:0 0 8px;font-size:1.35rem}
+header.site p{margin:0;opacity:.85}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:18px 0 8px}
+.menu a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text)}
+.menu a strong{display:block;margin-bottom:4px}
+.menu a span{display:block;font-size:.85rem;opacity:.75}
+.chapter{margin:28px 0;padding-top:8px;border-top:1px solid var(--line)}
+.chapter h2{margin:0 0 6px;font-size:1.2rem}
+.chapter .blurb{opacity:.8;margin:0 0 14px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
+.step>header{padding:14px 16px;border-bottom:1px solid var(--line);background:#182040}
+.step>header h3{margin:0 0 6px;font-size:1rem}
+.step>header p{margin:0;font-size:.9rem;opacity:.8}
+.item{padding:14px 16px;border-top:1px solid #243056}
+.item:first-of-type{border-top:0}
+.item .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.item .row h4{flex:1;margin:0;font-size:.95rem;min-width:160px}
+.item .note{font-size:.85rem;opacity:.75;margin:0 0 8px}
+button, .raw{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:.9rem;cursor:pointer}
+.raw{background:#2a3760;display:inline-block}
+pre{margin:0;padding:12px;background:#0d1328;border-radius:10px;overflow:auto;font-size:.85rem;white-space:pre-wrap}
+.toast{position:fixed;right:16px;bottom:16px;background:var(--ok);color:#052e16;padding:10px 14px;border-radius:8px;display:none;z-index:9}
+footer{opacity:.6;font-size:.85rem;padding:24px 0}
+</style></head><body>
+<header class="site"><div class="wrap">
+  <h1>Chapter4 Playground で最初の判定</h1>
+  <p>ブラウザの Playground に貼る文。コード不要。</p>
+  <p><a href="index.html">← 章メニューに戻る</a></p>
+  <div class="menu"><a href="ch04.html"><strong>Chapter4</strong><span>Chapter4 Playground で最初の判定</span></a><a href="ch05.html"><strong>Chapter5</strong><span>Chapter5 curl で呼ぶ</span></a><a href="ch07.html"><strong>Chapter7</strong><span>Chapter7 少し質問を足す</span></a><a href="ch08.html"><strong>Chapter8</strong><span>Chapter8 自動してよいか</span></a><a href="apb.html"><strong>付録B</strong><span>付録B curl の雛形</span></a></div>
+</div></header>
+<main class="wrap">
+<section class="step">
+  <header><h3>手順1　緊急かどうか</h3><p>Playground を開き、State に問い合わせ文、Questions に noul を1つ足して Run。</p></header>
+  <div class="item" id="ch04-01">
+  <div class="row">
+    <h4>State に貼る文（緊急）</h4>
+    <button type="button" data-copy="ch04-01">コピー</button>
+    <a class="raw" href="samples/ch04/01-state-urgent.txt">生ファイル</a>
+  </div>
+  <p class='note'>質問は書かない。材料だけ。</p>
+  <pre><code id="code-ch04-01">3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。
+</code></pre>
+</div>
+<div class="item" id="ch04-02">
+  <div class="row">
+    <h4>Questions / noul の instructions</h4>
+    <button type="button" data-copy="ch04-02">コピー</button>
+    <a class="raw" href="samples/ch04/02-noul-instructions.txt">生ファイル</a>
+  </div>
+  <p class='note'>type=noul / ID=is_urgent。criteria は空でよい。</p>
+  <pre><code id="code-ch04-02">このメッセージは緊急性や時間的な切迫を伝えているか
+</code></pre>
+</div>
+</section><section class="step">
+  <header><h3>手順2　急ぎではない文でもう1回</h3><p>Questions はそのまま。State だけ差し替えて Run。</p></header>
+  <div class="item" id="ch04-03">
+  <div class="row">
+    <h4>State に貼る文（急ぎではない）</h4>
+    <button type="button" data-copy="ch04-03">コピー</button>
+    <a class="raw" href="samples/ch04/03-state-not-urgent.txt">生ファイル</a>
+  </div>
+  <p class='note'>noul が 0 に近づくはず。</p>
+  <pre><code id="code-ch04-03">今後の参考に、料金プランの一覧を送っていただけますか。急ぎではありません。
+</code></pre>
+</div>
+</section><section class="step">
+  <header><h3>手順3　どの部署が見るべきか</h3><p>State を緊急の文に戻し、choice を1つ足して Run。</p></header>
+  <div class="item" id="ch04-01b">
+  <div class="row">
+    <h4>State（緊急の文に戻す）</h4>
+    <button type="button" data-copy="ch04-01b">コピー</button>
+    <a class="raw" href="samples/ch04/01-state-urgent.txt">生ファイル</a>
+  </div>
+  <p class='note'>手順1と同じ文。</p>
+  <pre><code id="code-ch04-01b">3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。
+</code></pre>
+</div>
+<div class="item" id="ch04-04">
+  <div class="row">
+    <h4>Questions / choice の instructions</h4>
+    <button type="button" data-copy="ch04-04">コピー</button>
+    <a class="raw" href="samples/ch04/04-choice-instructions.txt">生ファイル</a>
+  </div>
+  <p class='note'>ID=department。</p>
+  <pre><code id="code-ch04-04">どのチームが対応すべきか
+</code></pre>
+</div>
+<div class="item" id="ch04-05">
+  <div class="row">
+    <h4>Questions / choice の criteria</h4>
+    <button type="button" data-copy="ch04-05">コピー</button>
+    <a class="raw" href="samples/ch04/05-choice-criteria.json">生ファイル</a>
+  </div>
+  <p class='note'>billing / technical / sales。</p>
+  <pre><code id="code-ch04-05">{
+  &quot;billing&quot;: &quot;支払い・請求・サブスクリプションの問題&quot;,
+  &quot;technical&quot;: &quot;不具合・障害・連携の問題&quot;,
+  &quot;sales&quot;: &quot;料金・アップグレード・新規アカウントの質問&quot;
+}
+</code></pre>
+</div>
+</section><section class="step">
+  <header><h3>手順4　候補に無い材料</h3><p>State だけ感謝の一文に変えて Run。confidence が下がるか確認。</p></header>
+  <div class="item" id="ch04-06">
+  <div class="row">
+    <h4>State に貼る文（感謝）</h4>
+    <button type="button" data-copy="ch04-06">コピー</button>
+    <a class="raw" href="samples/ch04/06-state-thanks.txt">生ファイル</a>
+  </div>
+  <p class='note'>候補外を作れない仕組みの確認。</p>
+  <pre><code id="code-ch04-06">先週の展示会、ブースが分かりやすくて助かりました。ありがとうございました。
+</code></pre>
+</div>
+</section>
+<footer>キーの実値は載せません。自分の環境の値に差し替えてください。</footer>
+</main>
+<div class="toast" id="toast">コピーしました</div>
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn=>{
+  btn.addEventListener('click', async ()=>{
+    const id=btn.getAttribute('data-copy');
+    const el=document.getElementById('code-'+id);
+    await navigator.clipboard.writeText(el.innerText);
+    const t=document.getElementById('toast');
+    t.style.display='block'; setTimeout(()=>t.style.display='none',1200);
+  });
+});
+// deep link: if hash present, scroll
+if(location.hash){
+  const t=document.querySelector(location.hash);
+  if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+</body></html>

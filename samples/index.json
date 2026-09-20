@@ -2,267 +2,235 @@
   {
     "id": "ch04-01",
     "chapter": "ch04",
-    "lang": "txt",
     "path": "samples/ch04/01-state-urgent.txt",
-    "title": "State（緊急の問い合わせ）"
+    "title": "State に貼る文（緊急）"
   },
   {
     "id": "ch04-02",
     "chapter": "ch04",
-    "lang": "txt",
     "path": "samples/ch04/02-noul-instructions.txt",
     "title": "Questions / noul の instructions"
   },
   {
     "id": "ch04-03",
     "chapter": "ch04",
-    "lang": "txt",
     "path": "samples/ch04/03-state-not-urgent.txt",
-    "title": "State（急ぎではない問い合わせ）"
+    "title": "State に貼る文（急ぎではない）"
+  },
+  {
+    "id": "ch04-01b",
+    "chapter": "ch04",
+    "path": "samples/ch04/01-state-urgent.txt",
+    "title": "State（緊急の文に戻す）"
   },
   {
     "id": "ch04-04",
     "chapter": "ch04",
-    "lang": "txt",
     "path": "samples/ch04/04-choice-instructions.txt",
     "title": "Questions / choice の instructions"
   },
   {
     "id": "ch04-05",
     "chapter": "ch04",
-    "lang": "json",
     "path": "samples/ch04/05-choice-criteria.json",
     "title": "Questions / choice の criteria"
   },
   {
     "id": "ch04-06",
     "chapter": "ch04",
-    "lang": "txt",
     "path": "samples/ch04/06-state-thanks.txt",
-    "title": "State（候補に無い感謝の一文）"
+    "title": "State に貼る文（感謝）"
   },
   {
     "id": "ch05-01",
     "chapter": "ch05",
-    "lang": "json",
     "path": "samples/ch05/01.json",
-    "title": "第5章 サンプル 1"
+    "title": "サンプル 01"
   },
   {
     "id": "ch05-02",
     "chapter": "ch05",
-    "lang": "json",
     "path": "samples/ch05/02.json",
-    "title": "第5章 サンプル 2"
+    "title": "サンプル 02"
   },
   {
     "id": "ch05-03",
     "chapter": "ch05",
-    "lang": "sh",
     "path": "samples/ch05/03.sh",
-    "title": "第5章 サンプル 3"
+    "title": "サンプル 03"
   },
   {
     "id": "ch05-04",
     "chapter": "ch05",
-    "lang": "sh",
     "path": "samples/ch05/04.sh",
-    "title": "第5章 サンプル 4"
+    "title": "サンプル 04"
   },
   {
     "id": "ch05-05",
     "chapter": "ch05",
-    "lang": "sh",
     "path": "samples/ch05/05.sh",
-    "title": "第5章 サンプル 5"
+    "title": "サンプル 05"
   },
   {
     "id": "ch05-06",
     "chapter": "ch05",
-    "lang": "sh",
     "path": "samples/ch05/06.sh",
-    "title": "第5章 サンプル 6"
+    "title": "サンプル 06"
   },
   {
     "id": "ch05-07",
     "chapter": "ch05",
-    "lang": "json",
     "path": "samples/ch05/07.json",
-    "title": "第5章 サンプル 7"
+    "title": "サンプル 07"
   },
   {
     "id": "ch05-08",
     "chapter": "ch05",
-    "lang": "sh",
     "path": "samples/ch05/08.sh",
-    "title": "第5章 サンプル 8"
+    "title": "サンプル 08"
   },
   {
     "id": "ch05-09",
     "chapter": "ch05",
-    "lang": "json",
     "path": "samples/ch05/09.json",
-    "title": "第5章 サンプル 9"
+    "title": "サンプル 09"
   },
   {
     "id": "ch05-10",
     "chapter": "ch05",
-    "lang": "json",
     "path": "samples/ch05/10.json",
-    "title": "第5章 サンプル 10"
+    "title": "サンプル 10"
   },
   {
     "id": "ch05-11",
     "chapter": "ch05",
-    "lang": "sh",
     "path": "samples/ch05/11.sh",
-    "title": "第5章 サンプル 11"
+    "title": "サンプル 11"
   },
   {
     "id": "ch05-12",
     "chapter": "ch05",
-    "lang": "json",
     "path": "samples/ch05/12.json",
-    "title": "第5章 サンプル 12"
+    "title": "サンプル 12"
   },
   {
     "id": "ch07-01",
     "chapter": "ch07",
-    "lang": "json",
     "path": "samples/ch07/01.json",
-    "title": "第7章 サンプル 1"
+    "title": "サンプル 01"
   },
   {
     "id": "ch07-02",
     "chapter": "ch07",
-    "lang": "json",
     "path": "samples/ch07/02.json",
-    "title": "第7章 サンプル 2"
+    "title": "サンプル 02"
   },
   {
     "id": "ch07-03",
     "chapter": "ch07",
-    "lang": "json",
     "path": "samples/ch07/03.json",
-    "title": "第7章 サンプル 3"
+    "title": "サンプル 03"
   },
   {
     "id": "ch07-04",
     "chapter": "ch07",
-    "lang": "json",
     "path": "samples/ch07/04.json",
-    "title": "第7章 サンプル 4"
+    "title": "サンプル 04"
   },
   {
     "id": "ch08-01",
     "chapter": "ch08",
-    "lang": "json",
     "path": "samples/ch08/01.json",
-    "title": "第8章 サンプル 1"
+    "title": "サンプル 01"
   },
   {
     "id": "ch08-02",
     "chapter": "ch08",
-    "lang": "json",
     "path": "samples/ch08/02.json",
-    "title": "第8章 サンプル 2"
+    "title": "サンプル 02"
   },
   {
     "id": "ch08-03",
     "chapter": "ch08",
-    "lang": "json",
     "path": "samples/ch08/03.json",
-    "title": "第8章 サンプル 3"
+    "title": "サンプル 03"
   },
   {
     "id": "ch08-04",
     "chapter": "ch08",
-    "lang": "json",
     "path": "samples/ch08/04.json",
-    "title": "第8章 サンプル 4"
+    "title": "サンプル 04"
   },
   {
     "id": "apb-01",
     "chapter": "apb",
-    "lang": "sh",
     "path": "samples/appendix-b/01.sh",
-    "title": "付録B サンプル 1"
+    "title": "サンプル 01"
   },
   {
     "id": "apb-02",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/02.json",
-    "title": "付録B サンプル 2"
+    "title": "サンプル 02"
   },
   {
     "id": "apb-03",
     "chapter": "apb",
-    "lang": "sh",
     "path": "samples/appendix-b/03.sh",
-    "title": "付録B サンプル 3"
+    "title": "サンプル 03"
   },
   {
     "id": "apb-04",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/04.json",
-    "title": "付録B サンプル 4"
+    "title": "サンプル 04"
   },
   {
     "id": "apb-05",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/05.json",
-    "title": "付録B サンプル 5"
+    "title": "サンプル 05"
   },
   {
     "id": "apb-06",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/06.json",
-    "title": "付録B サンプル 6"
+    "title": "サンプル 06"
   },
   {
     "id": "apb-07",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/07.json",
-    "title": "付録B サンプル 7"
+    "title": "サンプル 07"
   },
   {
     "id": "apb-08",
     "chapter": "apb",
-    "lang": "sh",
     "path": "samples/appendix-b/08.sh",
-    "title": "付録B サンプル 8"
+    "title": "サンプル 08"
   },
   {
     "id": "apb-09",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/09.json",
-    "title": "付録B サンプル 9"
+    "title": "サンプル 09"
   },
   {
     "id": "apb-10",
     "chapter": "apb",
-    "lang": "json",
     "path": "samples/appendix-b/10.json",
-    "title": "付録B サンプル 10"
+    "title": "サンプル 10"
   },
   {
     "id": "apb-11",
     "chapter": "apb",
-    "lang": "sh",
     "path": "samples/appendix-b/11.sh",
-    "title": "付録B サンプル 11"
+    "title": "サンプル 11"
   },
   {
     "id": "apb-12",
     "chapter": "apb",
-    "lang": "sh",
     "path": "samples/appendix-b/12.sh",
-    "title": "付録B サンプル 12"
+    "title": "サンプル 12"
   }
 ]
