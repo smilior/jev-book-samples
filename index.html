@@ -12,31 +12,72 @@ main{max-width:920px;margin:0 auto;padding:20px}
 .card h2{flex:1;margin:0;font-size:1rem;min-width:180px}
 .card button,.card a{background:#3d6bfd;color:#fff;border:0;border-radius:8px;padding:8px 12px;text-decoration:none;font-size:.9rem;cursor:pointer}
 .card a{background:#2a3760}
-pre{margin:0;padding:14px;overflow:auto;font-size:.85rem;line-height:1.45}
+pre{margin:0;padding:14px;overflow:auto;font-size:.85rem;line-height:1.45;white-space:pre-wrap}
 .toast{position:fixed;right:16px;bottom:16px;background:#22c55e;color:#052e16;padding:10px 14px;border-radius:8px;display:none}
 nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
 </style></head><body>
 <header class="site">
-  <h1>Jev 超入門 — コードサンプル</h1>
-  <p>電子書籍本文のコードを、ここからコピーできます。APIキーは入れないでください。自分のキーに差し替えて使います。</p>
+  <h1>Jev 超入門 — コピー用サンプル</h1>
+  <p>電子書籍本文のコードと、Playground に貼る文を、ここからコピーできます。APIキーは入れないでください。</p>
   <nav>
+    <a href="#ch04-01">第4章 Playground</a>
     <a href="#ch05-01">第5章</a>
     <a href="#ch07-01">第7章</a>
     <a href="#ch08-01">第8章</a>
     <a href="#apb-01">付録B</a>
     <a href="samples/index.json">index.json</a>
-  </nav>
+</nav>
 </header>
 <main>
-<section class="card" id="ch05-01">
+<section class="card" id="ch04-01">
+  <header><h2>State（緊急の問い合わせ）</h2>
+  <button type="button" data-copy="ch04-01">コピー</button>
+  <a href="samples/ch04/01-state-urgent.txt">生ファイル</a></header>
+  <pre><code id="code-ch04-01" class="language-txt">3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。
+</code></pre>
+</section><section class="card" id="ch04-02">
+  <header><h2>Questions / noul の instructions</h2>
+  <button type="button" data-copy="ch04-02">コピー</button>
+  <a href="samples/ch04/02-noul-instructions.txt">生ファイル</a></header>
+  <pre><code id="code-ch04-02" class="language-txt">このメッセージは緊急性や時間的な切迫を伝えているか
+</code></pre>
+</section><section class="card" id="ch04-03">
+  <header><h2>State（急ぎではない問い合わせ）</h2>
+  <button type="button" data-copy="ch04-03">コピー</button>
+  <a href="samples/ch04/03-state-not-urgent.txt">生ファイル</a></header>
+  <pre><code id="code-ch04-03" class="language-txt">今後の参考に、料金プランの一覧を送っていただけますか。急ぎではありません。
+</code></pre>
+</section><section class="card" id="ch04-04">
+  <header><h2>Questions / choice の instructions</h2>
+  <button type="button" data-copy="ch04-04">コピー</button>
+  <a href="samples/ch04/04-choice-instructions.txt">生ファイル</a></header>
+  <pre><code id="code-ch04-04" class="language-txt">どのチームが対応すべきか
+</code></pre>
+</section><section class="card" id="ch04-05">
+  <header><h2>Questions / choice の criteria</h2>
+  <button type="button" data-copy="ch04-05">コピー</button>
+  <a href="samples/ch04/05-choice-criteria.json">生ファイル</a></header>
+  <pre><code id="code-ch04-05" class="language-json">{
+  &quot;billing&quot;: &quot;支払い・請求・サブスクリプションの問題&quot;,
+  &quot;technical&quot;: &quot;不具合・障害・連携の問題&quot;,
+  &quot;sales&quot;: &quot;料金・アップグレード・新規アカウントの質問&quot;
+}
+</code></pre>
+</section><section class="card" id="ch04-06">
+  <header><h2>State（候補に無い感謝の一文）</h2>
+  <button type="button" data-copy="ch04-06">コピー</button>
+  <a href="samples/ch04/06-state-thanks.txt">生ファイル</a></header>
+  <pre><code id="code-ch04-06" class="language-txt">先週の展示会、ブースが分かりやすくて助かりました。ありがとうございました。
+</code></pre>
+</section><section class="card" id="ch05-01">
   <header><h2>第5章 サンプル 1</h2>
   <button type="button" data-copy="ch05-01">コピー</button>
   <a href="samples/ch05/01.json">生ファイル</a></header>
   <pre><code id="code-ch05-01" class="language-json">{
-  "state": "判断の材料",
-  "model": "jev-latest",
-  "questions": { "自分で付けた名前": { "type": "...", "instructions": "..." } }
+  &quot;state&quot;: &quot;判断の材料&quot;,
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: { &quot;自分で付けた名前&quot;: { &quot;type&quot;: &quot;...&quot;, &quot;instructions&quot;: &quot;...&quot; } }
 }
 </code></pre>
 </section><section class="card" id="ch05-02">
@@ -44,51 +85,51 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch05-02">コピー</button>
   <a href="samples/ch05/02.json">生ファイル</a></header>
   <pre><code id="code-ch05-02" class="language-json">{
-  "model": "実際に答えた版",
-  "answers": { "送ったのと同じ名前": { ... } },
-  "usage": { "input_tokens": 0, "output_tokens": 0 }
+  &quot;model&quot;: &quot;実際に答えた版&quot;,
+  &quot;answers&quot;: { &quot;送ったのと同じ名前&quot;: { ... } },
+  &quot;usage&quot;: { &quot;input_tokens&quot;: 0, &quot;output_tokens&quot;: 0 }
 }
 </code></pre>
 </section><section class="card" id="ch05-03">
   <header><h2>第5章 サンプル 3</h2>
   <button type="button" data-copy="ch05-03">コピー</button>
   <a href="samples/ch05/03.sh">生ファイル</a></header>
-  <pre><code id="code-ch05-03" class="language-bash">cd ~/jev-practice
+  <pre><code id="code-ch05-03" class="language-sh">cd ~/jev-practice
 </code></pre>
 </section><section class="card" id="ch05-04">
   <header><h2>第5章 サンプル 4</h2>
   <button type="button" data-copy="ch05-04">コピー</button>
   <a href="samples/ch05/04.sh">生ファイル</a></header>
-  <pre><code id="code-ch05-04" class="language-bash">export $(grep -v '^#' .env | xargs)
+  <pre><code id="code-ch05-04" class="language-sh">export $(grep -v &#x27;^#&#x27; .env | xargs)
 </code></pre>
 </section><section class="card" id="ch05-05">
   <header><h2>第5章 サンプル 5</h2>
   <button type="button" data-copy="ch05-05">コピー</button>
   <a href="samples/ch05/05.sh">生ファイル</a></header>
-  <pre><code id="code-ch05-05" class="language-bash">echo "${JEV_API_KEY:0:6}..."
+  <pre><code id="code-ch05-05" class="language-sh">echo &quot;${JEV_API_KEY:0:6}...&quot;
 </code></pre>
 </section><section class="card" id="ch05-06">
   <header><h2>第5章 サンプル 6</h2>
   <button type="button" data-copy="ch05-06">コピー</button>
   <a href="samples/ch05/06.sh">生ファイル</a></header>
-  <pre><code id="code-ch05-06" class="language-bash">curl https://api.typesafe.ai/v1/models \
-  -H "Authorization: Bearer $JEV_API_KEY"
+  <pre><code id="code-ch05-06" class="language-sh">curl https://api.typesafe.ai/v1/models \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot;
 </code></pre>
 </section><section class="card" id="ch05-07">
   <header><h2>第5章 サンプル 7</h2>
   <button type="button" data-copy="ch05-07">コピー</button>
   <a href="samples/ch05/07.json">生ファイル</a></header>
   <pre><code id="code-ch05-07" class="language-json">{
-  "models": [
+  &quot;models&quot;: [
     {
-      "name": "jev-latest",
-      "description": "The latest iteration of TypeSafe's System One Model: Jev",
-      "release_date": "2026-09-10T18:38:01.391457+00:00"
+      &quot;name&quot;: &quot;jev-latest&quot;,
+      &quot;description&quot;: &quot;The latest iteration of TypeSafe&#x27;s System One Model: Jev&quot;,
+      &quot;release_date&quot;: &quot;2026-09-10T18:38:01.391457+00:00&quot;
     },
     {
-      "name": "jev-preview",
-      "description": "A preview version of `jev-latest`: should be better in most ways",
-      "release_date": "2026-09-10T18:39:06.057655+00:00"
+      &quot;name&quot;: &quot;jev-preview&quot;,
+      &quot;description&quot;: &quot;A preview version of `jev-latest`: should be better in most ways&quot;,
+      &quot;release_date&quot;: &quot;2026-09-10T18:39:06.057655+00:00&quot;
     }
   ]
 }
@@ -97,54 +138,54 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <header><h2>第5章 サンプル 8</h2>
   <button type="button" data-copy="ch05-08">コピー</button>
   <a href="samples/ch05/08.sh">生ファイル</a></header>
-  <pre><code id="code-ch05-08" class="language-bash">curl -X POST https://api.typesafe.ai/v1/systemone \
-  -H "Authorization: Bearer $JEV_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",
-    "model": "jev-latest",
-    "questions": {
-      "is_urgent": {
-        "type": "noul",
-        "instructions": "このメッセージは緊急性や時間的な切迫を伝えているか"
+  <pre><code id="code-ch05-08" class="language-sh">curl -X POST https://api.typesafe.ai/v1/systemone \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{
+    &quot;state&quot;: &quot;3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。&quot;,
+    &quot;model&quot;: &quot;jev-latest&quot;,
+    &quot;questions&quot;: {
+      &quot;is_urgent&quot;: {
+        &quot;type&quot;: &quot;noul&quot;,
+        &quot;instructions&quot;: &quot;このメッセージは緊急性や時間的な切迫を伝えているか&quot;
       },
-      "department": {
-        "type": "choice",
-        "instructions": "どのチームが対応すべきか",
-        "criteria": {
-          "billing": "支払い・請求・サブスクリプションの問題",
-          "technical": "不具合・障害・連携の問題",
-          "sales": "料金・アップグレード・新規アカウントの質問"
+      &quot;department&quot;: {
+        &quot;type&quot;: &quot;choice&quot;,
+        &quot;instructions&quot;: &quot;どのチームが対応すべきか&quot;,
+        &quot;criteria&quot;: {
+          &quot;billing&quot;: &quot;支払い・請求・サブスクリプションの問題&quot;,
+          &quot;technical&quot;: &quot;不具合・障害・連携の問題&quot;,
+          &quot;sales&quot;: &quot;料金・アップグレード・新規アカウントの質問&quot;
         }
       }
     }
-  }'
+  }&#x27;
 </code></pre>
 </section><section class="card" id="ch05-09">
   <header><h2>第5章 サンプル 9</h2>
   <button type="button" data-copy="ch05-09">コピー</button>
   <a href="samples/ch05/09.json">生ファイル</a></header>
   <pre><code id="code-ch05-09" class="language-json">{
-  "model": "jev-1.13.0",
-  "answers": {
-    "is_urgent": {
-      "type": "noul",
-      "noul": 0.98
+  &quot;model&quot;: &quot;jev-1.13.0&quot;,
+  &quot;answers&quot;: {
+    &quot;is_urgent&quot;: {
+      &quot;type&quot;: &quot;noul&quot;,
+      &quot;noul&quot;: 0.98
     },
-    "department": {
-      "type": "choice",
-      "choice": "technical",
-      "confidence": 0.77,
-      "probabilities": {
-        "technical": 0.85,
-        "billing": 0.15,
-        "sales": 0.0
+    &quot;department&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;choice&quot;: &quot;technical&quot;,
+      &quot;confidence&quot;: 0.77,
+      &quot;probabilities&quot;: {
+        &quot;technical&quot;: 0.85,
+        &quot;billing&quot;: 0.15,
+        &quot;sales&quot;: 0.0
       }
     }
   },
-  "usage": {
-    "input_tokens": 528,
-    "output_tokens": 73
+  &quot;usage&quot;: {
+    &quot;input_tokens&quot;: 528,
+    &quot;output_tokens&quot;: 73
   }
 }
 </code></pre>
@@ -153,12 +194,12 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch05-10">コピー</button>
   <a href="samples/ch05/10.json">生ファイル</a></header>
   <pre><code id="code-ch05-10" class="language-json">{
-  "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",
-  "model": "jev-latest",
-  "questions": {
-    "is_urgent": {
-      "type": "noul",
-      "instructions": "このメッセージは緊急性や時間的な切迫を伝えているか"
+  &quot;state&quot;: &quot;3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。&quot;,
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;is_urgent&quot;: {
+      &quot;type&quot;: &quot;noul&quot;,
+      &quot;instructions&quot;: &quot;このメッセージは緊急性や時間的な切迫を伝えているか&quot;
     }
   }
 }
@@ -167,18 +208,18 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <header><h2>第5章 サンプル 11</h2>
   <button type="button" data-copy="ch05-11">コピー</button>
   <a href="samples/ch05/11.sh">生ファイル</a></header>
-  <pre><code id="code-ch05-11" class="language-bash">curl -X POST https://api.typesafe.ai/v1/systemone \
-  -H "Authorization: Bearer $JEV_API_KEY" \
-  -H "Content-Type: application/json" \
+  <pre><code id="code-ch05-11" class="language-sh">curl -X POST https://api.typesafe.ai/v1/systemone \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
   -d @request.json
 </code></pre>
 </section><section class="card" id="ch05-12">
   <header><h2>第5章 サンプル 12</h2>
   <button type="button" data-copy="ch05-12">コピー</button>
   <a href="samples/ch05/12.json">生ファイル</a></header>
-  <pre><code id="code-ch05-12" class="language-json">"state": {
-  "source": "残業は原則として事前申請とする。",
-  "claim": "当社では残業の申請は不要です。"
+  <pre><code id="code-ch05-12" class="language-json">&quot;state&quot;: {
+  &quot;source&quot;: &quot;残業は原則として事前申請とする。&quot;,
+  &quot;claim&quot;: &quot;当社では残業の申請は不要です。&quot;
 }
 </code></pre>
 </section><section class="card" id="ch07-01">
@@ -186,11 +227,11 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch07-01">コピー</button>
   <a href="samples/ch07/01.json">生ファイル</a></header>
   <pre><code id="code-ch07-01" class="language-json">{
-  "店名": "カフェ・ミナミ",
-  "金額": 1290,
-  "日時": "2026-09-18 14:20",
-  "人数": 2,
-  "メモ": "A社と次回打ち合わせの日程調整"
+  &quot;店名&quot;: &quot;カフェ・ミナミ&quot;,
+  &quot;金額&quot;: 1290,
+  &quot;日時&quot;: &quot;2026-09-18 14:20&quot;,
+  &quot;人数&quot;: 2,
+  &quot;メモ&quot;: &quot;A社と次回打ち合わせの日程調整&quot;
 }
 </code></pre>
 </section><section class="card" id="ch07-02">
@@ -198,19 +239,19 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch07-02">コピー</button>
   <a href="samples/ch07/02.json">生ファイル</a></header>
   <pre><code id="code-ch07-02" class="language-json">{
-  "account": {
-    "type": "choice",
-    "instructions": "この支出の勘定科目はどれか",
-    "criteria": {
-      "会議費": "打ち合わせに伴う飲食・会場費",
-      "交際費": "接待・贈答。取引先をもてなす目的",
-      "消耗品費": "文房具・備品など物品の購入",
-      "その他": "どれにも当てはまらない"
+  &quot;account&quot;: {
+    &quot;type&quot;: &quot;choice&quot;,
+    &quot;instructions&quot;: &quot;この支出の勘定科目はどれか&quot;,
+    &quot;criteria&quot;: {
+      &quot;会議費&quot;: &quot;打ち合わせに伴う飲食・会場費&quot;,
+      &quot;交際費&quot;: &quot;接待・贈答。取引先をもてなす目的&quot;,
+      &quot;消耗品費&quot;: &quot;文房具・備品など物品の購入&quot;,
+      &quot;その他&quot;: &quot;どれにも当てはまらない&quot;
     }
   },
-  "personal_suspect": {
-    "type": "noul",
-    "instructions": "この支出は、業務ではなく私的な利用が疑われるか"
+  &quot;personal_suspect&quot;: {
+    &quot;type&quot;: &quot;noul&quot;,
+    &quot;instructions&quot;: &quot;この支出は、業務ではなく私的な利用が疑われるか&quot;
   }
 }
 </code></pre>
@@ -219,11 +260,11 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch07-03">コピー</button>
   <a href="samples/ch07/03.json">生ファイル</a></header>
   <pre><code id="code-ch07-03" class="language-json">{
-  "店名": "カフェ・ミナミ",
-  "金額": 1290,
-  "日時": "2026-09-21 21:40",
-  "人数": 1,
-  "メモ": ""
+  &quot;店名&quot;: &quot;カフェ・ミナミ&quot;,
+  &quot;金額&quot;: 1290,
+  &quot;日時&quot;: &quot;2026-09-21 21:40&quot;,
+  &quot;人数&quot;: 1,
+  &quot;メモ&quot;: &quot;&quot;
 }
 </code></pre>
 </section><section class="card" id="ch07-04">
@@ -231,27 +272,27 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch07-04">コピー</button>
   <a href="samples/ch07/04.json">生ファイル</a></header>
   <pre><code id="code-ch07-04" class="language-json">{
-  "intent": {
-    "type": "choice",
-    "instructions": "この投稿の用件はどれか",
-    "criteria": {
-      "日程調整": "会議や予定の時間・日付の変更や確認",
-      "依頼": "作業や確認を頼んでいる",
-      "共有": "報告・周知。作業は求めていない",
-      "雑談": "業務の用件ではない"
+  &quot;intent&quot;: {
+    &quot;type&quot;: &quot;choice&quot;,
+    &quot;instructions&quot;: &quot;この投稿の用件はどれか&quot;,
+    &quot;criteria&quot;: {
+      &quot;日程調整&quot;: &quot;会議や予定の時間・日付の変更や確認&quot;,
+      &quot;依頼&quot;: &quot;作業や確認を頼んでいる&quot;,
+      &quot;共有&quot;: &quot;報告・周知。作業は求めていない&quot;,
+      &quot;雑談&quot;: &quot;業務の用件ではない&quot;
     }
   },
-  "needs_reply": {
-    "type": "noul",
-    "instructions": "この投稿は、こちらからの返信を必要としているか"
+  &quot;needs_reply&quot;: {
+    &quot;type&quot;: &quot;noul&quot;,
+    &quot;instructions&quot;: &quot;この投稿は、こちらからの返信を必要としているか&quot;
   },
-  "urgency": {
-    "type": "score",
-    "instructions": "この投稿に、いつまでに返すべきか",
-    "criteria": [
-      "今日中でなくてよい",
-      "今日中には返したい",
-      "いますぐ返したほうがよい"
+  &quot;urgency&quot;: {
+    &quot;type&quot;: &quot;score&quot;,
+    &quot;instructions&quot;: &quot;この投稿に、いつまでに返すべきか&quot;,
+    &quot;criteria&quot;: [
+      &quot;今日中でなくてよい&quot;,
+      &quot;今日中には返したい&quot;,
+      &quot;いますぐ返したほうがよい&quot;
     ]
   }
 }
@@ -261,8 +302,8 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch08-01">コピー</button>
   <a href="samples/ch08/01.json">生ファイル</a></header>
   <pre><code id="code-ch08-01" class="language-json">{
-  "規程": "残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。",
-  "回答文": "当社では残業の申請は不要です。"
+  &quot;規程&quot;: &quot;残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。&quot;,
+  &quot;回答文&quot;: &quot;当社では残業の申請は不要です。&quot;
 }
 </code></pre>
 </section><section class="card" id="ch08-02">
@@ -270,13 +311,13 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch08-02">コピー</button>
   <a href="samples/ch08/02.json">生ファイル</a></header>
   <pre><code id="code-ch08-02" class="language-json">{
-  "relation": {
-    "type": "choice",
-    "instructions": "`規程` は `回答文` を支えているか、反しているか、触れていないか",
-    "criteria": {
-      "支えている": "規程が、その内容を認めている。または直接そう読める",
-      "反している": "規程が、その内容の反対を言っている",
-      "触れていない": "規程は、その内容について何も書いていない"
+  &quot;relation&quot;: {
+    &quot;type&quot;: &quot;choice&quot;,
+    &quot;instructions&quot;: &quot;`規程` は `回答文` を支えているか、反しているか、触れていないか&quot;,
+    &quot;criteria&quot;: {
+      &quot;支えている&quot;: &quot;規程が、その内容を認めている。または直接そう読める&quot;,
+      &quot;反している&quot;: &quot;規程が、その内容の反対を言っている&quot;,
+      &quot;触れていない&quot;: &quot;規程は、その内容について何も書いていない&quot;
     }
   }
 }
@@ -286,8 +327,8 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch08-03">コピー</button>
   <a href="samples/ch08/03.json">生ファイル</a></header>
   <pre><code id="code-ch08-03" class="language-json">{
-  "規程": "残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。",
-  "回答文": "残業は、原則として事前に申請してください。"
+  &quot;規程&quot;: &quot;残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。&quot;,
+  &quot;回答文&quot;: &quot;残業は、原則として事前に申請してください。&quot;
 }
 </code></pre>
 </section><section class="card" id="ch08-04">
@@ -295,29 +336,29 @@ nav a{color:#9db4ff;text-decoration:none;font-size:.9rem}
   <button type="button" data-copy="ch08-04">コピー</button>
   <a href="samples/ch08/04.json">生ファイル</a></header>
   <pre><code id="code-ch08-04" class="language-json">{
-  "規程": "残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。",
-  "回答文": "在宅勤務は週3日までです。"
+  &quot;規程&quot;: &quot;残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。&quot;,
+  &quot;回答文&quot;: &quot;在宅勤務は週3日までです。&quot;
 }
 </code></pre>
 </section><section class="card" id="apb-01">
   <header><h2>付録B サンプル 1</h2>
   <button type="button" data-copy="apb-01">コピー</button>
   <a href="samples/appendix-b/01.sh">生ファイル</a></header>
-  <pre><code id="code-apb-01" class="language-bash">export $(grep -v '^#' .env | xargs)
-echo "${JEV_API_KEY:0:6}..."
+  <pre><code id="code-apb-01" class="language-sh">export $(grep -v &#x27;^#&#x27; .env | xargs)
+echo &quot;${JEV_API_KEY:0:6}...&quot;
 </code></pre>
 </section><section class="card" id="apb-02">
   <header><h2>付録B サンプル 2</h2>
   <button type="button" data-copy="apb-02">コピー</button>
   <a href="samples/appendix-b/02.json">生ファイル</a></header>
   <pre><code id="code-apb-02" class="language-json">{
-  "state": "ここに材料",
-  "model": "jev-latest",
-  "questions": {
-    "自分で付ける名前": {
-      "type": "choice | score | noul",
-      "instructions": "聞きたいこと",
-      "criteria": "型による。noul では省略可"
+  &quot;state&quot;: &quot;ここに材料&quot;,
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;自分で付ける名前&quot;: {
+      &quot;type&quot;: &quot;choice | score | noul&quot;,
+      &quot;instructions&quot;: &quot;聞きたいこと&quot;,
+      &quot;criteria&quot;: &quot;型による。noul では省略可&quot;
     }
   }
 }
@@ -326,23 +367,23 @@ echo "${JEV_API_KEY:0:6}..."
   <header><h2>付録B サンプル 3</h2>
   <button type="button" data-copy="apb-03">コピー</button>
   <a href="samples/appendix-b/03.sh">生ファイル</a></header>
-  <pre><code id="code-apb-03" class="language-bash">curl -X POST https://api.typesafe.ai/v1/systemone \
-  -H "Authorization: Bearer $JEV_API_KEY" \
-  -H "Content-Type: application/json" \
+  <pre><code id="code-apb-03" class="language-sh">curl -X POST https://api.typesafe.ai/v1/systemone \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
   -d @request.json
 </code></pre>
 </section><section class="card" id="apb-04">
   <header><h2>付録B サンプル 4</h2>
   <button type="button" data-copy="apb-04">コピー</button>
   <a href="samples/appendix-b/04.json">生ファイル</a></header>
-  <pre><code id="code-apb-04" class="language-json">"doc_type": {
-  "type": "choice",
-  "instructions": "この文書の種類はどれか",
-  "criteria": {
-    "minutes": "会議で決まったことの記録",
-    "notice": "周知・共有。作業や返信を求めない",
-    "application": "承認や申請を求める文書",
-    "other": "どれにも当てはまらない"
+  <pre><code id="code-apb-04" class="language-json">&quot;doc_type&quot;: {
+  &quot;type&quot;: &quot;choice&quot;,
+  &quot;instructions&quot;: &quot;この文書の種類はどれか&quot;,
+  &quot;criteria&quot;: {
+    &quot;minutes&quot;: &quot;会議で決まったことの記録&quot;,
+    &quot;notice&quot;: &quot;周知・共有。作業や返信を求めない&quot;,
+    &quot;application&quot;: &quot;承認や申請を求める文書&quot;,
+    &quot;other&quot;: &quot;どれにも当てはまらない&quot;
   }
 }
 </code></pre>
@@ -350,13 +391,13 @@ echo "${JEV_API_KEY:0:6}..."
   <header><h2>付録B サンプル 5</h2>
   <button type="button" data-copy="apb-05">コピー</button>
   <a href="samples/appendix-b/05.json">生ファイル</a></header>
-  <pre><code id="code-apb-05" class="language-json">"tone": {
-  "type": "score",
-  "instructions": "この下書きを、社内に送る前の丁寧さはどの段階か",
-  "criteria": [
-    "そのまま送ってよい",
-    "表現を直してから送る",
-    "人が内容を見てから送る"
+  <pre><code id="code-apb-05" class="language-json">&quot;tone&quot;: {
+  &quot;type&quot;: &quot;score&quot;,
+  &quot;instructions&quot;: &quot;この下書きを、社内に送る前の丁寧さはどの段階か&quot;,
+  &quot;criteria&quot;: [
+    &quot;そのまま送ってよい&quot;,
+    &quot;表現を直してから送る&quot;,
+    &quot;人が内容を見てから送る&quot;
   ]
 }
 </code></pre>
@@ -364,9 +405,9 @@ echo "${JEV_API_KEY:0:6}..."
   <header><h2>付録B サンプル 6</h2>
   <button type="button" data-copy="apb-06">コピー</button>
   <a href="samples/appendix-b/06.json">生ファイル</a></header>
-  <pre><code id="code-apb-06" class="language-json">"has_deadline": {
-  "type": "noul",
-  "instructions": "この文書に、いつまでに、という期限が書いてあるか"
+  <pre><code id="code-apb-06" class="language-json">&quot;has_deadline&quot;: {
+  &quot;type&quot;: &quot;noul&quot;,
+  &quot;instructions&quot;: &quot;この文書に、いつまでに、という期限が書いてあるか&quot;
 }
 </code></pre>
 </section><section class="card" id="apb-07">
@@ -374,19 +415,19 @@ echo "${JEV_API_KEY:0:6}..."
   <button type="button" data-copy="apb-07">コピー</button>
   <a href="samples/appendix-b/07.json">生ファイル</a></header>
   <pre><code id="code-apb-07" class="language-json">{
-  "state": {
-    "source": "残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。",
-    "claim": "当社では残業の申請は不要です。"
+  &quot;state&quot;: {
+    &quot;source&quot;: &quot;残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。&quot;,
+    &quot;claim&quot;: &quot;当社では残業の申請は不要です。&quot;
   },
-  "model": "jev-latest",
-  "questions": {
-    "relation": {
-      "type": "choice",
-      "instructions": "`source` は `claim` を支えているか、反しているか、触れていないか",
-      "criteria": {
-        "supports": "節は、その主張が正しいと言っている、または直接そう読める",
-        "contradicts": "節は、その主張の反対を言っている",
-        "says_nothing": "節は、その主張について何も言っていない"
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;relation&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;instructions&quot;: &quot;`source` は `claim` を支えているか、反しているか、触れていないか&quot;,
+      &quot;criteria&quot;: {
+        &quot;supports&quot;: &quot;節は、その主張が正しいと言っている、または直接そう読める&quot;,
+        &quot;contradicts&quot;: &quot;節は、その主張の反対を言っている&quot;,
+        &quot;says_nothing&quot;: &quot;節は、その主張について何も言っていない&quot;
       }
     }
   }
@@ -396,38 +437,38 @@ echo "${JEV_API_KEY:0:6}..."
   <header><h2>付録B サンプル 8</h2>
   <button type="button" data-copy="apb-08">コピー</button>
   <a href="samples/appendix-b/08.sh">生ファイル</a></header>
-  <pre><code id="code-apb-08" class="language-bash">curl https://api.typesafe.ai/v1/models \
-  -H "Authorization: Bearer $JEV_API_KEY"
+  <pre><code id="code-apb-08" class="language-sh">curl https://api.typesafe.ai/v1/models \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot;
 </code></pre>
 </section><section class="card" id="apb-09">
   <header><h2>付録B サンプル 9</h2>
   <button type="button" data-copy="apb-09">コピー</button>
   <a href="samples/appendix-b/09.json">生ファイル</a></header>
   <pre><code id="code-apb-09" class="language-json">{
-  "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",
-  "model": "jev-latest",
-  "questions": {
-    "department": {
-      "type": "choice",
-      "instructions": "どのチームが対応すべきか",
-      "criteria": {
-        "billing": "支払い・請求・サブスクリプションの問題",
-        "technical": "不具合・障害・連携の問題",
-        "sales": "料金・アップグレード・新規アカウントの質問"
+  &quot;state&quot;: &quot;3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。&quot;,
+  &quot;model&quot;: &quot;jev-latest&quot;,
+  &quot;questions&quot;: {
+    &quot;department&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;instructions&quot;: &quot;どのチームが対応すべきか&quot;,
+      &quot;criteria&quot;: {
+        &quot;billing&quot;: &quot;支払い・請求・サブスクリプションの問題&quot;,
+        &quot;technical&quot;: &quot;不具合・障害・連携の問題&quot;,
+        &quot;sales&quot;: &quot;料金・アップグレード・新規アカウントの質問&quot;
       }
     },
-    "frustration": {
-      "type": "score",
-      "instructions": "顧客がどれくらい不満そうか",
-      "criteria": [
-        "冷静に事実だけ述べている",
-        "不満はあるが礼儀正しい",
-        "激怒して強い言葉を使っている"
+    &quot;frustration&quot;: {
+      &quot;type&quot;: &quot;score&quot;,
+      &quot;instructions&quot;: &quot;顧客がどれくらい不満そうか&quot;,
+      &quot;criteria&quot;: [
+        &quot;冷静に事実だけ述べている&quot;,
+        &quot;不満はあるが礼儀正しい&quot;,
+        &quot;激怒して強い言葉を使っている&quot;
       ]
     },
-    "is_urgent": {
-      "type": "noul",
-      "instructions": "このメッセージは緊急性や時間的な切迫を伝えているか"
+    &quot;is_urgent&quot;: {
+      &quot;type&quot;: &quot;noul&quot;,
+      &quot;instructions&quot;: &quot;このメッセージは緊急性や時間的な切迫を伝えているか&quot;
     }
   }
 }
@@ -437,44 +478,44 @@ echo "${JEV_API_KEY:0:6}..."
   <button type="button" data-copy="apb-10">コピー</button>
   <a href="samples/appendix-b/10.json">生ファイル</a></header>
   <pre><code id="code-apb-10" class="language-json">{
-  "model": "jev-1.13.0",
-  "answers": {
-    "department": {
-      "type": "choice",
-      "choice": "technical",
-      "confidence": 0.77,
-      "probabilities": { "technical": 0.85, "billing": 0.15, "sales": 0.0 }
+  &quot;model&quot;: &quot;jev-1.13.0&quot;,
+  &quot;answers&quot;: {
+    &quot;department&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;choice&quot;: &quot;technical&quot;,
+      &quot;confidence&quot;: 0.77,
+      &quot;probabilities&quot;: { &quot;technical&quot;: 0.85, &quot;billing&quot;: 0.15, &quot;sales&quot;: 0.0 }
     },
-    "frustration": {
-      "type": "score",
-      "score": 1.0,
-      "confidence": 0.87,
-      "legend": {
-        "0": "冷静に事実だけ述べている",
-        "1": "不満はあるが礼儀正しい",
-        "2": "激怒して強い言葉を使っている"
+    &quot;frustration&quot;: {
+      &quot;type&quot;: &quot;score&quot;,
+      &quot;score&quot;: 1.0,
+      &quot;confidence&quot;: 0.87,
+      &quot;legend&quot;: {
+        &quot;0&quot;: &quot;冷静に事実だけ述べている&quot;,
+        &quot;1&quot;: &quot;不満はあるが礼儀正しい&quot;,
+        &quot;2&quot;: &quot;激怒して強い言葉を使っている&quot;
       },
-      "probabilities": { "0": 0.04, "1": 0.92, "2": 0.04 }
+      &quot;probabilities&quot;: { &quot;0&quot;: 0.04, &quot;1&quot;: 0.92, &quot;2&quot;: 0.04 }
     },
-    "is_urgent": { "type": "noul", "noul": 0.98 }
+    &quot;is_urgent&quot;: { &quot;type&quot;: &quot;noul&quot;, &quot;noul&quot;: 0.98 }
   },
-  "usage": { "input_tokens": 528, "output_tokens": 73 }
+  &quot;usage&quot;: { &quot;input_tokens&quot;: 528, &quot;output_tokens&quot;: 73 }
 }
 </code></pre>
 </section><section class="card" id="apb-11">
   <header><h2>付録B サンプル 11</h2>
   <button type="button" data-copy="apb-11">コピー</button>
   <a href="samples/appendix-b/11.sh">生ファイル</a></header>
-  <pre><code id="code-apb-11" class="language-bash">curl -s -X POST https://api.typesafe.ai/v1/systemone \
-  -H "Authorization: Bearer $JEV_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d @request.json | jq '.answers'
+  <pre><code id="code-apb-11" class="language-sh">curl -s -X POST https://api.typesafe.ai/v1/systemone \
+  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d @request.json | jq &#x27;.answers&#x27;
 </code></pre>
 </section><section class="card" id="apb-12">
   <header><h2>付録B サンプル 12</h2>
   <button type="button" data-copy="apb-12">コピー</button>
   <a href="samples/appendix-b/12.sh">生ファイル</a></header>
-  <pre><code id="code-apb-12" class="language-bash">... | jq '.answers | to_entries | map({(.key): (.value.confidence // .value.noul)}) | add'
+  <pre><code id="code-apb-12" class="language-sh">... | jq &#x27;.answers | to_entries | map({(.key): (.value.confidence // .value.noul)}) | add&#x27;
 </code></pre>
 </section>
 </main>
