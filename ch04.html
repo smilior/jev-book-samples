@@ -1,42 +1,19 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Chapter4 Playground で最初の判定 — コピー用</title><style>
-:root{--bg:#0b1020;--panel:#121933;--card:#161e36;--line:#2a3760;--text:#e8ecf7;--muted:#9db4ff;--accent:#3d6bfd;--ok:#22c55e}
-*{box-sizing:border-box}
-body{margin:0;font-family:ui-sans-serif,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-a{color:var(--muted);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:980px;margin:0 auto;padding:20px}
-header.site{background:var(--panel);border-bottom:1px solid var(--line);padding:22px 20px}
-header.site h1{margin:0 0 8px;font-size:1.35rem}
-header.site p{margin:0;opacity:.85}
-.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:18px 0 8px}
-.menu a{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text)}
-.menu a strong{display:block;margin-bottom:4px}
-.menu a span{display:block;font-size:.85rem;opacity:.75}
-.chapter{margin:28px 0;padding-top:8px;border-top:1px solid var(--line)}
-.chapter h2{margin:0 0 6px;font-size:1.2rem}
-.chapter .blurb{opacity:.8;margin:0 0 14px}
-.step{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:14px 0;overflow:hidden}
-.step>header{padding:14px 16px;border-bottom:1px solid var(--line);background:#182040}
-.step>header h3{margin:0 0 6px;font-size:1rem}
-.step>header p{margin:0;font-size:.9rem;opacity:.8}
-.item{padding:14px 16px;border-top:1px solid #243056}
-.item:first-of-type{border-top:0}
-.item .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
-.item .row h4{flex:1;margin:0;font-size:.95rem;min-width:160px}
-.item .note{font-size:.85rem;opacity:.75;margin:0 0 8px}
-button, .raw{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:.9rem;cursor:pointer}
-.raw{background:#2a3760;display:inline-block}
-pre{margin:0;padding:12px;background:#0d1328;border-radius:10px;overflow:auto;font-size:.85rem;white-space:pre-wrap}
-.toast{position:fixed;right:16px;bottom:16px;background:var(--ok);color:#052e16;padding:10px 14px;border-radius:8px;display:none;z-index:9}
-footer{opacity:.6;font-size:.85rem;padding:24px 0}
-</style></head><body>
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Chapter4 Playground で最初の判定 — コピー用</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/site.css"/>
+</head><body>
 <header class="site"><div class="wrap">
   <h1>Chapter4 Playground で最初の判定</h1>
-  <p>ブラウザの Playground に貼る文。コード不要。</p>
-  <p><a href="index.html">← 章メニューに戻る</a></p>
-  <div class="menu"><a href="ch04.html"><strong>Chapter4</strong><span>Chapter4 Playground で最初の判定</span></a><a href="ch05.html"><strong>Chapter5</strong><span>Chapter5 curl で呼ぶ</span></a><a href="ch07.html"><strong>Chapter7</strong><span>Chapter7 少し質問を足す</span></a><a href="ch08.html"><strong>Chapter8</strong><span>Chapter8 自動してよいか</span></a><a href="apb.html"><strong>付録B</strong><span>付録B curl の雛形</span></a></div>
+  <p class="lede">ブラウザの Playground に貼る文。コード不要。</p>
+  <p class="warn"><strong>APIキーは入れないでください。</strong> キーの実値は載せません。自分の環境の値に差し替えてください。</p>
+  <p><a class="back" href="index.html">← 章メニューに戻る</a></p>
+  <div class="menu"><a href="ch04.html" aria-current="page"><strong>Chapter4</strong><span>Playground で最初の判定</span></a><a href="ch05.html"><strong>Chapter5</strong><span>curl で呼ぶ</span></a><a href="ch07.html"><strong>Chapter7</strong><span>少し質問を足す</span></a><a href="ch08.html"><strong>Chapter8</strong><span>自動してよいか</span></a><a href="apb.html"><strong>付録B</strong><span>curl の雛形</span></a></div>
 </div></header>
 <main class="wrap">
 <section class="step">
@@ -125,20 +102,5 @@ footer{opacity:.6;font-size:.85rem;padding:24px 0}
 <footer>キーの実値は載せません。自分の環境の値に差し替えてください。</footer>
 </main>
 <div class="toast" id="toast">コピーしました</div>
-<script>
-document.querySelectorAll('[data-copy]').forEach(btn=>{
-  btn.addEventListener('click', async ()=>{
-    const id=btn.getAttribute('data-copy');
-    const el=document.getElementById('code-'+id);
-    await navigator.clipboard.writeText(el.innerText);
-    const t=document.getElementById('toast');
-    t.style.display='block'; setTimeout(()=>t.style.display='none',1200);
-  });
-});
-// deep link: if hash present, scroll
-if(location.hash){
-  const t=document.querySelector(location.hash);
-  if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
-}
-</script>
+<script src="assets/site.js"></script>
 </body></html>

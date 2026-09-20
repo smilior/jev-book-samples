@@ -1,0 +1,361 @@
+/* Jev 超入門 — companion Pages (ebook feel) */
+:root {
+  --bg: #f7f4ef;
+  --surface: #fffcf7;
+  --card: #ffffff;
+  --line: #e6dfd4;
+  --line-soft: #efe9e0;
+  --text: #1b140c;
+  --muted: #6a5d4f;
+  --accent: #2f7a74;
+  --accent-hover: #266860;
+  --accent-soft: #e8f3f1;
+  --pre-bg: #f1ece4;
+  --warn-bg: #faf3e6;
+  --warn-line: #e8d5b0;
+  --warn-text: #5c4320;
+  --ok: #2f7a4e;
+  --ok-bg: #e8f5ee;
+  --shadow: 0 1px 2px rgba(27, 20, 12, 0.04);
+  --radius: 12px;
+  --max: 800px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic UI", "Yu Gothic", Meiryo, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.35rem;
+}
+
+/* —— Header / chapter menu —— */
+header.site {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 1.75rem 0 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+header.site h1 {
+  margin: 0 0 0.45rem;
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+header.site .lede {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+header.site .back {
+  display: inline-block;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+  gap: 0.65rem;
+  margin: 0.85rem 0 0;
+}
+
+.menu a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.85rem 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: var(--shadow);
+}
+
+.menu a:hover {
+  border-color: #cfc4b4;
+  box-shadow: 0 2px 8px rgba(27, 20, 12, 0.06);
+  text-decoration: none;
+}
+
+.menu a[aria-current="page"] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.menu a strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.menu a span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* —— Warning —— */
+.warn {
+  margin: 1.25rem 0 0;
+  padding: 0.85rem 1rem;
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  border-radius: 10px;
+  color: var(--warn-text);
+  font-size: 0.9rem;
+}
+
+.warn strong {
+  font-weight: 650;
+}
+
+/* —— Main —— */
+main.wrap {
+  padding-top: 1.75rem;
+  padding-bottom: 2.5rem;
+}
+
+main h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+main ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.35rem;
+  color: var(--text);
+}
+
+main ol li {
+  margin: 0.35rem 0;
+}
+
+main > p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+code.inline,
+main code:not(pre code) {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--pre-bg);
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+}
+
+/* —— Step cards —— */
+.step {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin: 1.35rem 0;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.step > header {
+  padding: 1rem 1.15rem 0.95rem;
+  border-bottom: 1px solid var(--line-soft);
+  background: linear-gradient(180deg, #fffcf7 0%, #faf6f0 100%);
+}
+
+.step > header h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.step > header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.item {
+  padding: 1.05rem 1.15rem 1.15rem;
+  border-top: 1px solid var(--line-soft);
+  scroll-margin-top: 1.25rem;
+}
+
+.item:first-of-type {
+  border-top: 0;
+}
+
+.item .row {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 0.55rem;
+}
+
+.item .row h4 {
+  flex: 1;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 140px;
+  line-height: 1.4;
+}
+
+.item .note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 0.65rem;
+}
+
+/* —— Buttons —— */
+button[data-copy] {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button[data-copy]:hover {
+  background: var(--accent-hover);
+}
+
+button[data-copy]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a.raw {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a.raw:hover {
+  border-color: #cfc4b4;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* —— Code blocks —— */
+pre {
+  margin: 0;
+  padding: 0.95rem 1rem;
+  background: var(--pre-bg);
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+  overflow: auto;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text);
+}
+
+pre code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, "Cascadia Mono", monospace;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* —— Toast —— */
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background: var(--ok-bg);
+  color: var(--ok);
+  border: 1px solid #b8dcc8;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  display: none;
+  z-index: 50;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(27, 20, 12, 0.08);
+}
+
+.toast.is-visible {
+  display: block;
+}
+
+/* —— Footer —— */
+footer {
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 1.75rem 0 0.5rem;
+  border-top: 1px solid var(--line-soft);
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 520px) {
+  header.site {
+    padding: 1.35rem 0 1rem;
+  }
+
+  header.site h1 {
+    font-size: 1.2rem;
+  }
+
+  .wrap {
+    padding: 0 1.05rem;
+  }
+
+  .menu {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  pre {
+    font-size: 0.8rem;
+  }
+}
