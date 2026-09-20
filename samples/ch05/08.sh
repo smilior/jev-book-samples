@@ -1,5 +1,5 @@
 curl -X POST https://api.typesafe.ai/v1/systemone \
-  -H "Authorization: Bearer $JEV_API_KEY" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",

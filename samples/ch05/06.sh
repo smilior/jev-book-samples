@@ -1,2 +1,2 @@
 curl https://api.typesafe.ai/v1/models \
-  -H "Authorization: Bearer $JEV_API_KEY"
+  -H "Authorization: Bearer YOUR_API_KEY"

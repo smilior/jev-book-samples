@@ -16,6 +16,9 @@
   <div class="menu"><a href="ch04.html"><strong>Chapter4</strong><span>Playground で最初の判定</span></a><a href="ch05.html" aria-current="page"><strong>Chapter5</strong><span>curl で呼ぶ</span></a><a href="ch07.html"><strong>Chapter7</strong><span>少し質問を足す</span></a><a href="ch08.html"><strong>Chapter8</strong><span>自動してよいか</span></a><a href="apb.html"><strong>付録B</strong><span>curl の雛形</span></a></div>
 </div></header>
 <main class="wrap">
+<aside class="callout callout-warn"><strong>注意</strong> サンプルの <code>YOUR_API_KEY</code> は自分のキーに書き換えて使います。.env や環境変数の手順はありません。キーを GitHub・チャット・画面共有に出さないでください。</aside>
+
+<div class="warn" style="margin:12px 0;padding:12px 14px;border:1px solid #e8d5b0;background:#faf3e6;border-radius:10px;color:#5c4320"><strong>注意:</strong> サンプルの <code>YOUR_API_KEY</code> は、自分のキーに書き換えて使います。（キーはcurlに直接書く） は使いません。キーをGitHub・チャット・スクリーンショットに載せないでください。</div>
 <section class="step">
   <header><h3>手順1　リクエストの材料</h3><p>本文の短縮例の全文。コピーしてからキーを差し替える。</p></header>
   <div class="item" id="ch05-01">
@@ -63,7 +66,7 @@
     <a class="raw" href="samples/ch05/04.sh">生ファイル</a>
   </div>
   
-  <pre><code id="code-ch05-04">export $(grep -v &#x27;^#&#x27; .env | xargs)
+  <pre><code id="code-ch05-04">export $(grep -v &#x27;^#&#x27; （キーはcurlに直接書く） | xargs)
 </code></pre>
 </div>
 <div class="item" id="ch05-05">

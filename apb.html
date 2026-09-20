@@ -16,6 +16,8 @@
   <div class="menu"><a href="ch04.html"><strong>Chapter4</strong><span>Playground で最初の判定</span></a><a href="ch05.html"><strong>Chapter5</strong><span>curl で呼ぶ</span></a><a href="ch07.html"><strong>Chapter7</strong><span>少し質問を足す</span></a><a href="ch08.html"><strong>Chapter8</strong><span>自動してよいか</span></a><a href="apb.html" aria-current="page"><strong>付録B</strong><span>curl の雛形</span></a></div>
 </div></header>
 <main class="wrap">
+<aside class="callout callout-warn"><strong>注意</strong> サンプルの <code>YOUR_API_KEY</code> は自分のキーに書き換えて使います。.env や環境変数の手順はありません。キーを GitHub・チャット・画面共有に出さないでください。</aside>
+
 <section class="step">
   <header><h3>コピー用雛形</h3><p>本文の #apb-01 〜 に対応。</p></header>
   <div class="item" id="apb-01">
@@ -25,7 +27,7 @@
     <a class="raw" href="samples/appendix-b/01.sh">生ファイル</a>
   </div>
   
-  <pre><code id="code-apb-01">export $(grep -v &#x27;^#&#x27; .env | xargs)
+  <pre><code id="code-apb-01">export $(grep -v &#x27;^#&#x27; （キーはcurlに直接書く） | xargs)
 echo &quot;${JEV_API_KEY:0:6}...&quot;
 </code></pre>
 </div>
