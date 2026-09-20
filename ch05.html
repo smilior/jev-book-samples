@@ -29,11 +29,10 @@
   </div>
   
   <pre><code id="code-ch05-01">{
-  &quot;state&quot;: &quot;判断の材料&quot;,
-  &quot;model&quot;: &quot;jev-latest&quot;,
-  &quot;questions&quot;: { &quot;自分で付けた名前&quot;: { &quot;type&quot;: &quot;...&quot;, &quot;instructions&quot;: &quot;...&quot; } }
-}
-</code></pre>
+  "state": "判断の材料",
+  "model": "jev-latest",
+  "questions": { "自分で付けた名前": { "type": "...", "instructions": "..." } }
+}</code></pre>
 </div>
 <div class="item" id="ch05-02">
   <div class="row">
@@ -43,11 +42,10 @@
   </div>
   
   <pre><code id="code-ch05-02">{
-  &quot;model&quot;: &quot;実際に答えた版&quot;,
-  &quot;answers&quot;: { &quot;送ったのと同じ名前&quot;: { ... } },
-  &quot;usage&quot;: { &quot;input_tokens&quot;: 0, &quot;output_tokens&quot;: 0 }
-}
-</code></pre>
+  "model": "実際に答えた版",
+  "answers": { "送ったのと同じ名前": { ... } },
+  "usage": { "input_tokens": 0, "output_tokens": 0 }
+}</code></pre>
 </div>
 <div class="item" id="ch05-03">
   <div class="row">
@@ -56,8 +54,7 @@
     <a class="raw" href="samples/ch05/03.sh">生ファイル</a>
   </div>
   
-  <pre><code id="code-ch05-03">cd ~/jev-practice
-</code></pre>
+  <pre><code id="code-ch05-03">cd ~/jev-practice</code></pre>
 </div>
 <div class="item" id="ch05-04">
   <div class="row">
@@ -66,8 +63,9 @@
     <a class="raw" href="samples/ch05/04.sh">生ファイル</a>
   </div>
   
-  <pre><code id="code-ch05-04">export $(grep -v &#x27;^#&#x27; （キーはcurlに直接書く） | xargs)
-</code></pre>
+  <pre><code id="code-ch05-04"># APIキーは curl の Bearer に直接書きます（.env は使いません）
+# YOUR_API_KEY を自分のキーに置き換えてください
+# キーを GitHub・チャット・画面共有に出さないでください</code></pre>
 </div>
 <div class="item" id="ch05-05">
   <div class="row">
@@ -76,8 +74,8 @@
     <a class="raw" href="samples/ch05/05.sh">生ファイル</a>
   </div>
   
-  <pre><code id="code-ch05-05">echo &quot;${JEV_API_KEY:0:6}...&quot;
-</code></pre>
+  <pre><code id="code-ch05-05">curl -s https://api.typesafe.ai/v1/models \
+  -H "Authorization: Bearer YOUR_API_KEY"</code></pre>
 </div>
 <div class="item" id="ch05-06">
   <div class="row">
@@ -87,8 +85,7 @@
   </div>
   
   <pre><code id="code-ch05-06">curl https://api.typesafe.ai/v1/models \
-  -H &quot;Authorization: Bearer $JEV_API_KEY&quot;
-</code></pre>
+  -H "Authorization: Bearer YOUR_API_KEY"</code></pre>
 </div>
 <div class="item" id="ch05-07">
   <div class="row">
@@ -98,20 +95,19 @@
   </div>
   
   <pre><code id="code-ch05-07">{
-  &quot;models&quot;: [
+  "models": [
     {
-      &quot;name&quot;: &quot;jev-latest&quot;,
-      &quot;description&quot;: &quot;The latest iteration of TypeSafe&#x27;s System One Model: Jev&quot;,
-      &quot;release_date&quot;: &quot;2026-09-10T18:38:01.391457+00:00&quot;
+      "name": "jev-latest",
+      "description": "The latest iteration of TypeSafe's System One Model: Jev",
+      "release_date": "2026-09-10T18:38:01.391457+00:00"
     },
     {
-      &quot;name&quot;: &quot;jev-preview&quot;,
-      &quot;description&quot;: &quot;A preview version of `jev-latest`: should be better in most ways&quot;,
-      &quot;release_date&quot;: &quot;2026-09-10T18:39:06.057655+00:00&quot;
+      "name": "jev-preview",
+      "description": "A preview version of `jev-latest`: should be better in most ways",
+      "release_date": "2026-09-10T18:39:06.057655+00:00"
     }
   ]
-}
-</code></pre>
+}</code></pre>
 </div>
 <div class="item" id="ch05-08">
   <div class="row">
@@ -121,28 +117,27 @@
   </div>
   
   <pre><code id="code-ch05-08">curl -X POST https://api.typesafe.ai/v1/systemone \
-  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#x27;{
-    &quot;state&quot;: &quot;3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。&quot;,
-    &quot;model&quot;: &quot;jev-latest&quot;,
-    &quot;questions&quot;: {
-      &quot;is_urgent&quot;: {
-        &quot;type&quot;: &quot;noul&quot;,
-        &quot;instructions&quot;: &quot;このメッセージは緊急性や時間的な切迫を伝えているか&quot;
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",
+    "model": "jev-latest",
+    "questions": {
+      "is_urgent": {
+        "type": "noul",
+        "instructions": "このメッセージは緊急性や時間的な切迫を伝えているか"
       },
-      &quot;department&quot;: {
-        &quot;type&quot;: &quot;choice&quot;,
-        &quot;instructions&quot;: &quot;どのチームが対応すべきか&quot;,
-        &quot;criteria&quot;: {
-          &quot;billing&quot;: &quot;支払い・請求・サブスクリプションの問題&quot;,
-          &quot;technical&quot;: &quot;不具合・障害・連携の問題&quot;,
-          &quot;sales&quot;: &quot;料金・アップグレード・新規アカウントの質問&quot;
+      "department": {
+        "type": "choice",
+        "instructions": "どのチームが対応すべきか",
+        "criteria": {
+          "billing": "支払い・請求・サブスクリプションの問題",
+          "technical": "不具合・障害・連携の問題",
+          "sales": "料金・アップグレード・新規アカウントの質問"
         }
       }
     }
-  }&#x27;
-</code></pre>
+  }'</code></pre>
 </div>
 <div class="item" id="ch05-09">
   <div class="row">
@@ -152,29 +147,28 @@
   </div>
   
   <pre><code id="code-ch05-09">{
-  &quot;model&quot;: &quot;jev-1.13.0&quot;,
-  &quot;answers&quot;: {
-    &quot;is_urgent&quot;: {
-      &quot;type&quot;: &quot;noul&quot;,
-      &quot;noul&quot;: 0.98
+  "model": "jev-1.13.0",
+  "answers": {
+    "is_urgent": {
+      "type": "noul",
+      "noul": 0.98
     },
-    &quot;department&quot;: {
-      &quot;type&quot;: &quot;choice&quot;,
-      &quot;choice&quot;: &quot;technical&quot;,
-      &quot;confidence&quot;: 0.77,
-      &quot;probabilities&quot;: {
-        &quot;technical&quot;: 0.85,
-        &quot;billing&quot;: 0.15,
-        &quot;sales&quot;: 0.0
+    "department": {
+      "type": "choice",
+      "choice": "technical",
+      "confidence": 0.77,
+      "probabilities": {
+        "technical": 0.85,
+        "billing": 0.15,
+        "sales": 0.0
       }
     }
   },
-  &quot;usage&quot;: {
-    &quot;input_tokens&quot;: 528,
-    &quot;output_tokens&quot;: 73
+  "usage": {
+    "input_tokens": 528,
+    "output_tokens": 73
   }
-}
-</code></pre>
+}</code></pre>
 </div>
 <div class="item" id="ch05-10">
   <div class="row">
@@ -184,16 +178,15 @@
   </div>
   
   <pre><code id="code-ch05-10">{
-  &quot;state&quot;: &quot;3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。&quot;,
-  &quot;model&quot;: &quot;jev-latest&quot;,
-  &quot;questions&quot;: {
-    &quot;is_urgent&quot;: {
-      &quot;type&quot;: &quot;noul&quot;,
-      &quot;instructions&quot;: &quot;このメッセージは緊急性や時間的な切迫を伝えているか&quot;
+  "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",
+  "model": "jev-latest",
+  "questions": {
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "このメッセージは緊急性や時間的な切迫を伝えているか"
     }
   }
-}
-</code></pre>
+}</code></pre>
 </div>
 <div class="item" id="ch05-11">
   <div class="row">
@@ -203,10 +196,9 @@
   </div>
   
   <pre><code id="code-ch05-11">curl -X POST https://api.typesafe.ai/v1/systemone \
-  -H &quot;Authorization: Bearer $JEV_API_KEY&quot; \
-  -H &quot;Content-Type: application/json&quot; \
-  -d @request.json
-</code></pre>
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d @request.json</code></pre>
 </div>
 <div class="item" id="ch05-12">
   <div class="row">
@@ -215,11 +207,10 @@
     <a class="raw" href="samples/ch05/12.json">生ファイル</a>
   </div>
   
-  <pre><code id="code-ch05-12">&quot;state&quot;: {
-  &quot;source&quot;: &quot;残業は原則として事前申請とする。&quot;,
-  &quot;claim&quot;: &quot;当社では残業の申請は不要です。&quot;
-}
-</code></pre>
+  <pre><code id="code-ch05-12">"state": {
+  "source": "残業は原則として事前申請とする。",
+  "claim": "当社では残業の申請は不要です。"
+}</code></pre>
 </div>
 </section>
 <footer>キーの実値は載せません。自分の環境の値に差し替えてください。</footer>
