@@ -1,0 +1,10 @@
+{
+  "state": "3日前からStripeアカウントが連携できなくて、売上が止まっています。至急対応してください。",
+  "model": "jev-latest",
+  "questions": {
+    "is_urgent": {
+      "type": "noul",
+      "instructions": "このメッセージは緊急性や時間的な切迫を伝えているか"
+    }
+  }
+}

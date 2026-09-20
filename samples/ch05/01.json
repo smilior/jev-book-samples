@@ -1,0 +1,5 @@
+{
+  "state": "判断の材料",
+  "model": "jev-latest",
+  "questions": { "自分で付けた名前": { "type": "...", "instructions": "..." } }
+}

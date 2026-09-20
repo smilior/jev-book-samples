@@ -1,0 +1,1 @@
+cd ~/jev-practice

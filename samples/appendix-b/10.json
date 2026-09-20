@@ -1,0 +1,24 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "department": {
+      "type": "choice",
+      "choice": "technical",
+      "confidence": 0.77,
+      "probabilities": { "technical": 0.85, "billing": 0.15, "sales": 0.0 }
+    },
+    "frustration": {
+      "type": "score",
+      "score": 1.0,
+      "confidence": 0.87,
+      "legend": {
+        "0": "冷静に事実だけ述べている",
+        "1": "不満はあるが礼儀正しい",
+        "2": "激怒して強い言葉を使っている"
+      },
+      "probabilities": { "0": 0.04, "1": 0.92, "2": 0.04 }
+    },
+    "is_urgent": { "type": "noul", "noul": 0.98 }
+  },
+  "usage": { "input_tokens": 528, "output_tokens": 73 }
+}

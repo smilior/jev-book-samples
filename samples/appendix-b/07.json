@@ -1,0 +1,18 @@
+{
+  "state": {
+    "source": "残業は原則として事前申請とする。緊急の場合は、事後に理由を報告する。",
+    "claim": "当社では残業の申請は不要です。"
+  },
+  "model": "jev-latest",
+  "questions": {
+    "relation": {
+      "type": "choice",
+      "instructions": "`source` は `claim` を支えているか、反しているか、触れていないか",
+      "criteria": {
+        "supports": "節は、その主張が正しいと言っている、または直接そう読める",
+        "contradicts": "節は、その主張の反対を言っている",
+        "says_nothing": "節は、その主張について何も言っていない"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+"doc_type": {
+  "type": "choice",
+  "instructions": "この文書の種類はどれか",
+  "criteria": {
+    "minutes": "会議で決まったことの記録",
+    "notice": "周知・共有。作業や返信を求めない",
+    "application": "承認や申請を求める文書",
+    "other": "どれにも当てはまらない"
+  }
+}

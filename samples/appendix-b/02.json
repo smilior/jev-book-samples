@@ -1,0 +1,11 @@
+{
+  "state": "ここに材料",
+  "model": "jev-latest",
+  "questions": {
+    "自分で付ける名前": {
+      "type": "choice | score | noul",
+      "instructions": "聞きたいこと",
+      "criteria": "型による。noul では省略可"
+    }
+  }
+}

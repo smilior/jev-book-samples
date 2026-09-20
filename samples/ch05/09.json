@@ -1,0 +1,23 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "is_urgent": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "department": {
+      "type": "choice",
+      "choice": "technical",
+      "confidence": 0.77,
+      "probabilities": {
+        "technical": 0.85,
+        "billing": 0.15,
+        "sales": 0.0
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 528,
+    "output_tokens": 73
+  }
+}

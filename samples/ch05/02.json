@@ -1,0 +1,5 @@
+{
+  "model": "実際に答えた版",
+  "answers": { "送ったのと同じ名前": { ... } },
+  "usage": { "input_tokens": 0, "output_tokens": 0 }
+}
